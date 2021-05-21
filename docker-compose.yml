@@ -1,0 +1,20 @@
+version: '2'
+services:
+  mqttbroker:
+    image: eclipse-mosquitto
+    restart: always
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+      - "8883:8883"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./passwd:/etc/mosquitto/passwd
+      - ./server.crt:/mosquitto/config/certs/server.crt
+      - ./chain.pem:/mosquitto/config/certs/chain.pem
+      - ./server.key:/mosquitto/config/certs/server.key
+    networks:
+      - MQTT-network
+networks:
+  MQTT-network:
+    driver: bridge
