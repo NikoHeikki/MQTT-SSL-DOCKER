@@ -1,0 +1,7 @@
+rootCA.key
+chain.pem
+server.key
+nikotestvm.northeurope.cloudapp.azure.com.csr
+rootCA.srl
+server.crt
+passwd
