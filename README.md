@@ -13,9 +13,10 @@ mosquitto_passwd -c passwd sammy
 
 ## Certificates
 
-### Create CA self-signed certificates using script 
+### Create CA self-signed certificates using scripts
 ```
-./generate-self-signed-ca-certs.sh
+./create_root_cert_and_key.sh
+./create_certificate_for_domain.sh example.org example.org
 ```
 ### You can also use fully qualified certificates, get certificate from Let’s Encrypt(https://letsencrypt.org/) using Certbot(https://certbot.eff.org/)
 Install Cerbot and install certs by following instructions and you should end up with certificate file and key. Requires to open port 80 for Let’s Encrypt to verify the domain name and do http challenge.
